@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { NotFonudComponent } from './not-fonud/not-fonud.component';
 
 const routes: Routes = [
   {
@@ -17,11 +18,15 @@ const routes: Routes = [
     path: 'welcome',
     component: WelcomeComponent
   },
-  // { path: '', pathMatch: 'full', redirectTo: '/welcome' },
-  // { path: 'welcome',
-  //   loadChildren: () => import('./pages/welcome/welcome.module')
-  //   .then(m => m.WelcomeModule)
-  // }
+  {
+    path: '**',
+    component: NotFonudComponent
+  },
+  { path: '', pathMatch: 'full', redirectTo: '/welcome' },
+  { path: 'welcome',
+    loadChildren: () => import('./pages/welcome/welcome.module')
+    .then(m => m.WelcomeModule)
+  }
 ];
 
 @NgModule({

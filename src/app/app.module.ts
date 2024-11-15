@@ -85,6 +85,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
 import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { NotFonudComponent } from './not-fonud/not-fonud.component';
 
 registerLocaleData(en);
 
@@ -92,7 +93,7 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     LoginComponent,
-    WelcomeComponent
+    NotFonudComponent
   ],
   imports: [
     BrowserModule,

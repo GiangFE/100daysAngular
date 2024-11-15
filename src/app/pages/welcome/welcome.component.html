@@ -43,6 +43,14 @@
                [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
             ></span>
         </span>
+        <nz-button-group class="logout">
+          <button
+              nz-button nzType="primary" [nzGhost]="nzGhost" [nzShape]="'round'"
+              (ngSubmit)="logOut()" routerLink="/login">
+              <span nz-icon nzType="logout"></span>
+              Logout
+          </button>
+        </nz-button-group>
       </div>
     </nz-header>
     <nz-content>
