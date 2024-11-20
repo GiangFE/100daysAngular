@@ -83,9 +83,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
-import { LoginComponent } from './login/login.component';
-import { WelcomeComponent } from './pages/welcome/welcome.component';
-import { NotFonudComponent } from './not-fonud/not-fonud.component';
+import { LoginComponent } from './router/login/login.component';
+import { NotFonudComponent } from './router/not-fonud/not-fonud.component';
+import { MonitorComponent } from './router/monitor/monitor.component';
+import { WelcomeModule } from "./router/welcome/welcome.module";
 
 registerLocaleData(en);
 
@@ -174,8 +175,9 @@ registerLocaleData(en);
     NzResizableModule,
     NzPipesModule,
     NzCodeEditorModule,
-    NzGraphModule
-  ],
+    NzGraphModule,
+    WelcomeModule
+],
   providers: [
     { provide: NZ_I18N, useValue: en_US }
   ],

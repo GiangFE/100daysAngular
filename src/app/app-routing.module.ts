@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { WelcomeComponent } from './pages/welcome/welcome.component';
-import { NotFonudComponent } from './not-fonud/not-fonud.component';
+import { LoginComponent } from './router/login/login.component';
+import { NotFonudComponent } from './router/not-fonud/not-fonud.component';
+import { WelcomeComponent } from './router/welcome/welcome.component';
+import { MonitorComponent } from './router/monitor/monitor.component';
 
 const routes: Routes = [
   {
@@ -14,19 +15,25 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   },
+  { path: '', pathMatch: 'full', redirectTo: '/welcome' },
   {
     path: 'welcome',
     component: WelcomeComponent
   },
   {
+    path: 'welcome',
+    loadChildren: () => import('./router/welcome/welcome.module')
+    .then(m => m.WelcomeModule)
+  },
+  {
+    path: 'monitor',
+    loadChildren: () => import('./router/monitor/monitor.module')
+    .then(m => m.MonitorModule)
+  },
+  {
     path: '**',
     component: NotFonudComponent
   },
-  { path: '', pathMatch: 'full', redirectTo: '/welcome' },
-  { path: 'welcome',
-    loadChildren: () => import('./pages/welcome/welcome.module')
-    .then(m => m.WelcomeModule)
-  }
 ];
 
 @NgModule({
