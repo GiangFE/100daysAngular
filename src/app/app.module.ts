@@ -113,6 +113,7 @@ registerLocaleData(en);
     NzAutocompleteModule,
     NzAvatarModule,
     NzBackTopModule,
+    NzPageHeaderModule,
     NzBadgeModule,
     NzButtonModule,
     NzBreadCrumbModule,
