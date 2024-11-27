@@ -1,0 +1,84 @@
+<div class="mat-elevation-z8">
+  <h2>USER LIST</h2>
+
+  <table mat-table [dataSource]="dataSource">
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef>Giới tính</th>
+      <td mat-cell *matCellDef="let element">{{ element.gender }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Tên</th>
+      <td mat-cell *matCellDef="let element">{{ element.name.first }}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="location">
+      <th mat-header-cell *matHeaderCellDef>Vị trí</th>
+      <td mat-cell *matCellDef="let element">{{ element.location.city }}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+    <!-- Role Column -->
+    <ng-container matColumnDef="login">
+      <th mat-header-cell *matHeaderCellDef>Đăng nhập</th>
+      <td mat-cell *matCellDef="let element">{{ element.login.username }}</td>
+    </ng-container>
+
+     <!-- Role Column -->
+     <ng-container matColumnDef="dob">
+      <th mat-header-cell *matHeaderCellDef>Dob</th>
+      <td mat-cell *matCellDef="let element">{{ element.dob.date }}</td>
+    </ng-container>
+
+     <!-- Role Column -->
+     <ng-container matColumnDef="registered">
+      <th mat-header-cell *matHeaderCellDef>Đăng ký</th>
+      <td mat-cell *matCellDef="let element">{{ element.registered.age }}</td>
+    </ng-container>
+
+     <!-- Role Column -->
+     <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef>Điện thoại</th>
+      <td mat-cell *matCellDef="let element">{{ element.phone }}</td>
+    </ng-container>
+
+     <!-- Role Column -->
+     <ng-container matColumnDef="cell">
+      <th mat-header-cell *matHeaderCellDef>Loại</th>
+      <td mat-cell *matCellDef="let element">{{ element.cell }}</td>
+    </ng-container>
+
+     <!-- Role Column -->
+     <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let element">{{ element.id.value }}</td>
+    </ng-container>
+
+    <!-- Role Column -->
+    <ng-container matColumnDef="picture">
+      <th mat-header-cell *matHeaderCellDef>Ảnh</th>
+      <td mat-cell *matCellDef="let element">{{ element.picture.medium }}</td>
+    </ng-container>
+
+    <!-- Role Column -->
+     <ng-container matColumnDef="nat">
+      <th mat-header-cell *matHeaderCellDef>Nat</th>
+      <td mat-cell *matCellDef="let element">{{ element.nat }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+</div>
