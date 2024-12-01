@@ -87,6 +87,8 @@ import { LoginComponent } from './router/login/login.component';
 import { NotFonudComponent } from './router/not-fonud/not-fonud.component';
 import { MonitorComponent } from './router/monitor/monitor.component';
 import { WelcomeModule } from "./router/welcome/welcome.module";
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 
 registerLocaleData(en);
 
@@ -177,7 +179,9 @@ registerLocaleData(en);
     NzPipesModule,
     NzCodeEditorModule,
     NzGraphModule,
-    WelcomeModule
+    WelcomeModule,
+    FormlyModule.forRoot(),
+    FormlyBootstrapModule
 ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }
