@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
+import { MonitorService } from '../monitor.service';
+import { of } from 'rxjs';
+import { MonitorComponent } from '../monitor.component';
 
 @Component({
   selector: 'app-sc-aside-monitor',
@@ -11,54 +14,81 @@ import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 export class ScAsideMonitorComponent implements OnInit {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private monitorService: MonitorService
   ) { }
+
 
   ngOnInit(): void {
   }
 
+
   form = new FormGroup({});
-  model: any = {};
+
+  model: any = {
+    province: '',
+    district: '',
+    precint: '',
+    customerName: '',
+    contactNo: '',
+    sn: ''
+  };
+
   options: FormlyFormOptions = {};
 
   fields: FormlyFieldConfig[] = [
     {
-      key: 'left',
-      type: 'input',
+      key: 'province',
+      type: 'select',
       props: {
-        placeholder: 'Formly is terrific!',
-        addonLeft: {
-          class: 'fa fa-euro',
-        },
-        label: 'One add-on on the left (icon)',
+        label: 'Province',
+        value: 'value',
+        options: this.monitorService.getProvince()
       },
     },
     {
-      key: 'both',
-      type: 'input',
+      key: 'district',
+      type: 'select',
       props: {
-        placeholder: 'How great is this?',
-        addonLeft: {
-          class: 'fa fa-home',
-        },
-        addonRight: {
-          text: '$',
-        },
-        label: 'One add-on on both side (left: icon, right: text)',
-      },
+        label: 'District',
+        value: 'value',
+        options: this.monitorService.getDistrict()
+      }
     },
     {
-      key: 'right',
+      key: 'precinct',
+      type: 'select',
+      props: {
+        label: 'Precinct',
+        value: 'value',
+        options: this.monitorService.getPrecint()
+      }
+    },
+    {
+      key: 'customerName',
       type: 'input',
       props: {
-        placeholder: `Nice, isn't it??`,
-
-        addonRight: {
-          class: 'fa fa-heart',
-        },
-        label: 'One add-on on the right (icon)',
-      },
+        required: true,
+        label: 'Customer name',
+        value: 'value'
+      }
     },
+    {
+      key: 'contactNo',
+      type: 'input',
+      props: {
+        label: 'Contact no',
+        value: 'value'
+      }
+    },
+    {
+      key: 'sn',
+      type: 'input',
+      props: {
+        label: 'SN',
+        type: 'number'
+      }
+    }
   ];
 
   submit() {

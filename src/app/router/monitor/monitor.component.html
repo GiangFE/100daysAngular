@@ -2,3 +2,9 @@
 
 <a routerLink="sc-aside-monitor">Edit Monitor</a>
 
+<formly-group [formGroup]="form" (ngSubmit)="submit()">
+  <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form">
+    <button type="submit" class="btn btn-primary submit-button">Submit</button>
+  </formly-form>
+</formly-group>
+

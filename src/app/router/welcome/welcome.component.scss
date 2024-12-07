@@ -17,11 +17,14 @@
 }
 
 .header-trigger {
-  height: 64px;
-  padding: 20px 24px;
-  font-size: 20px;
+  padding: 0px 25px;
+  font-size: 25px;
   cursor: pointer;
-  transition: all .3s,padding 0s;
+  transition: all 0.3s, padding 0s;
+}
+
+.trigger {
+  height: 50px;
 }
 
 .trigger:hover {
@@ -62,11 +65,13 @@ nz-header {
 }
 
 .app-header {
-  position: relative;
-  height: 64px;
+  display: flex;
+  height: 65px;
   padding: 0;
   background: #fff;
-  box-shadow: 0 1px 4px rgba(0,21,41,.08);
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  align-items: center;
+  justify-content: space-between;
 }
 
 nz-content {
@@ -83,4 +88,9 @@ nz-content {
   float: right;
   height: 61px;
   padding: 15px 25px 15px 15px;
+}
+
+button {
+  display: flex;
+  align-items: center;
 }

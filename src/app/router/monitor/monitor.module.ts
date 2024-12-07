@@ -7,12 +7,13 @@ import { ScAsideMonitorComponent } from './sc-aside-monitor/sc-aside-monitor.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { FormlyModule } from '@ngx-formly/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
   declarations: [
     MonitorComponent,
-    ScAsideMonitorComponent
+    ScAsideMonitorComponent,
   ],
   imports: [
     CommonModule,
@@ -20,8 +21,14 @@ import { FormlyModule } from '@ngx-formly/core';
     MonitorRoutingModule,
     ReactiveFormsModule,
     FormlyBootstrapModule,
-    FormlyBootstrapModule,
-    FormlyModule.forRoot()
+    FormlyModule.forRoot({
+      validationMessages: [{
+        name: 'required', message: "This field is required"
+      }],
+      types: [],
+      extensions: [],
+      wrappers: []
+    })
   ],
 })
 export class MonitorModule { }
