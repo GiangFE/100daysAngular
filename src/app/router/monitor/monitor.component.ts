@@ -18,7 +18,15 @@ export class MonitorComponent implements OnInit {
   }
 
   form = new FormGroup({});
-  model: any = {};
+  model: any = {
+    id: '',
+    province: '',
+    district: '',
+    precint: '',
+    customerName: '',
+    contactNo: '',
+    sn: ''
+  };
   options: FormlyFormOptions = {};
 
   fields: FormlyFieldConfig[] = [
@@ -30,6 +38,11 @@ export class MonitorComponent implements OnInit {
         type: 'text',
         label: 'First name',
       },
+      hooks: {
+        onInit: (field: FormlyFieldConfig) => {
+          field.form?.get('pProvince')
+        }
+      }
     },
     {
       key: 'address',
@@ -42,7 +55,7 @@ export class MonitorComponent implements OnInit {
           required: true,
           type: 'text',
           label: 'Town'
-        }
+        },
       }]
     }
 

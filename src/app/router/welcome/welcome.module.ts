@@ -11,16 +11,17 @@ import { IconsProviderModule } from "src/app/icons-provider.module";
 import { WelcomeRoutingModule } from "./welcome-routing.module";
 import { WelcomeComponent } from "./welcome.component";
 import { NzButtonModule } from "ng-zorro-antd/button";
+import { SharedModule } from "src/app/shared/shared.module";
 
 @NgModule({
   imports: [
     FormsModule,
+    SharedModule,
     HttpClientModule,
     IconsProviderModule,
     NzButtonModule,
     NzIconModule,
     NzMenuModule,
-    BrowserModule,
     BrowserAnimationsModule,
     NzLayoutModule,
     AppRoutingModule,

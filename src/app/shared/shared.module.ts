@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
+import { SharedComponent } from './components/shared/shared.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
+import { FormlyModule } from '@ngx-formly/core';
 import { NzAffixModule } from 'ng-zorro-antd/affix';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzAnchorModule } from 'ng-zorro-antd/anchor';
@@ -35,22 +39,23 @@ import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzMentionModule } from 'ng-zorro-antd/mention';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzNotificationModule } from 'ng-zorro-antd/notification';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { NzPipesModule } from 'ng-zorro-antd/pipes';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzRateModule } from 'ng-zorro-antd/rate';
+import { NzResizableModule } from 'ng-zorro-antd/resizable';
 import { NzResultModule } from 'ng-zorro-antd/result';
-import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 import { NzSliderModule } from 'ng-zorro-antd/slider';
-import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 import { NzStepsModule } from 'ng-zorro-antd/steps';
@@ -63,56 +68,42 @@ import { NzTimelineModule } from 'ng-zorro-antd/timeline';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzTransferModule } from 'ng-zorro-antd/transfer';
 import { NzTreeModule } from 'ng-zorro-antd/tree';
-import { NzTreeViewModule } from 'ng-zorro-antd/tree-view';
 import { NzTreeSelectModule } from 'ng-zorro-antd/tree-select';
+import { NzTreeViewModule } from 'ng-zorro-antd/tree-view';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
-import { NzResizableModule } from 'ng-zorro-antd/resizable';
-import { NzPipesModule } from 'ng-zorro-antd/pipes';
-import { NzCodeEditorModule } from 'ng-zorro-antd/code-editor';
-import { NzGraphModule } from 'ng-zorro-antd/graph';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { NZ_I18N } from 'ng-zorro-antd/i18n';
-import { en_US } from 'ng-zorro-antd/i18n';
-import { CommonModule, registerLocaleData } from '@angular/common';
-import en from '@angular/common/locales/en';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { IconsProviderModule } from './icons-provider.module';
-import { LoginComponent } from './router/login/login.component';
-import { NotFonudComponent } from './router/not-fonud/not-fonud.component';
-import { FormlyModule } from '@ngx-formly/core';
-import { SharedModule } from './shared/shared.module';
-import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
+import { NzCodeEditorModule } from 'ng-zorro-antd/code-editor';
+import { NzGraphModule } from 'ng-zorro-antd/graph';
+import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
+import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { AppRoutingModule } from '../app-routing.module';
+import { IconsProviderModule } from '../icons-provider.module';
 
-registerLocaleData(en);
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent,
-    NotFonudComponent
+    SharedComponent
   ],
   imports: [
     CommonModule,
-    AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule,
     IconsProviderModule,
-    NzLayoutModule,
-    NzFormModule,
+    NzSegmentedModule,
+    NzSpaceModule,
+    NzCodeEditorModule,
+    NzGraphModule,
     NzAffixModule,
     NzAlertModule,
     NzAnchorModule,
     NzAutocompleteModule,
     NzAvatarModule,
     NzBackTopModule,
-    NzPageHeaderModule,
     NzBadgeModule,
     NzButtonModule,
     NzBreadCrumbModule,
@@ -129,14 +120,17 @@ registerLocaleData(en);
     NzDrawerModule,
     NzDropDownModule,
     NzEmptyModule,
+    NzFormModule,
     NzGridModule,
     NzI18nModule,
     NzIconModule,
     NzImageModule,
     NzInputModule,
     NzInputNumberModule,
+    NzLayoutModule,
     NzListModule,
     NzMentionModule,
+    NzMenuModule,
     NzMessageModule,
     NzModalModule,
     NzNoAnimationModule,
@@ -149,11 +143,9 @@ registerLocaleData(en);
     NzRadioModule,
     NzRateModule,
     NzResultModule,
-    NzSegmentedModule,
     NzSelectModule,
     NzSkeletonModule,
     NzSliderModule,
-    NzSpaceModule,
     NzSpinModule,
     NzStatisticModule,
     NzStepsModule,
@@ -174,15 +166,12 @@ registerLocaleData(en);
     NzWaveModule,
     NzResizableModule,
     NzPipesModule,
-    NzCodeEditorModule,
-    NzGraphModule,
-    SharedModule,
-    FormlyModule.forRoot(),
+    ReactiveFormsModule,
     FormlyBootstrapModule,
-],
-  providers: [
-    { provide: NZ_I18N, useValue: en_US }
+    FormlyModule.forRoot()
   ],
-  bootstrap: [AppComponent]
+  exports: [
+    SharedComponent
+  ]
 })
-export class AppModule { }
+export class SharedModule { }
