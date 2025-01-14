@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MonitorComponent } from './monitor.component';
 import { ScAsideMonitorComponent } from './sc-aside-monitor/sc-aside-monitor.component';
+import { ScSearchNonitorComponent } from './sc-search-nonitor/sc-search-nonitor.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: MonitorComponent,
+    component: ScSearchNonitorComponent,
   },
   {
     path: 'sc-aside-monitor',

@@ -1,11 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
-import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
-import { MonitorService } from '../monitor.service';
-import { of } from 'rxjs';
-import { MonitorComponent } from '../monitor.component';
-
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { FieldTypeConfig, FormlyFieldConfig } from '@ngx-formly/core';
 @Component({
   selector: 'app-sc-aside-monitor',
   templateUrl: './sc-aside-monitor.component.html',
@@ -13,85 +8,69 @@ import { MonitorComponent } from '../monitor.component';
 })
 export class ScAsideMonitorComponent implements OnInit {
 
-  constructor(
-    private router: Router,
-    private monitorService: MonitorService
-  ) { }
-
-
-  ngOnInit(): void {
-  }
-
-
   form = new FormGroup({});
-
-  model: any = {
-    province: '',
-    district: '',
-    precint: '',
-    customerName: '',
-    contactNo: '',
-    sn: ''
-  };
-
-  options: FormlyFormOptions = {};
-
+  model = {};
   fields: FormlyFieldConfig[] = [
     {
-      key: 'province',
-      type: 'select',
+      key: 'input',
+      type: 'input',
       props: {
-        label: 'Province',
-        value: 'value',
-        options: this.monitorService.getProvince()
+        label: 'Input',
+        placeholder: 'Input placeholder',
+        required: true,
       },
     },
     {
-      key: 'district',
-      type: 'select',
+      key: 'textarea',
+      type: 'textarea',
       props: {
-        label: 'District',
-        value: 'value',
-        options: this.monitorService.getDistrict()
-      }
-    },
-    {
-      key: 'precinct',
-      type: 'select',
-      props: {
-        label: 'Precinct',
-        value: 'value',
-        options: this.monitorService.getPrecint()
-      }
-    },
-    {
-      key: 'customerName',
-      type: 'input',
-      props: {
+        label: 'Textarea',
+        placeholder: 'Textarea placeholder',
         required: true,
-        label: 'Customer name',
-        value: 'value'
-      }
+      },
     },
     {
-      key: 'contactNo',
-      type: 'input',
+      key: 'checkbox',
+      type: 'checkbox',
       props: {
-        label: 'Contact no',
-        value: 'value'
-      }
+        label: 'Checkbox',
+      },
     },
     {
-      key: 'sn',
-      type: 'input',
+      key: 'select',
+      type: 'select',
       props: {
-        label: 'SN',
-        type: 'number'
-      }
-    }
+        label: 'Select',
+        placeholder: 'Select placeholder',
+        required: true,
+        options: [
+          { label: 'Option 1', value: '1' },
+          { label: 'Option 2', value: '2' },
+          { label: 'Option 3', value: '3' },
+        ],
+      },
+    },
+    {
+      key: 'radio',
+      type: 'radio',
+      props: {
+        label: 'Radio',
+        required: true,
+        options: [
+          { label: 'Option 1', value: '1' },
+          { label: 'Option 2', value: '2' },
+        ],
+      },
+    },
   ];
 
-  submit() {
-    alert(JSON.stringify(this.model));
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+
+  onSubmit() {
+    if (this.form.valid) {
+      alert(JSON.stringify(this.model, null, 2));
+    }
   }
 }

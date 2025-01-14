@@ -1,0 +1,68 @@
+<nz-page-header nzBackIcon>
+  <nz-page-header-title>Monitor management</nz-page-header-title>
+  <nz-page-header-subtitle>Cms</nz-page-header-subtitle>
+  <nz-page-header-extra>
+    <nz-space>
+      <button *nzSpaceItem nz-button>Mức 1</button>
+      <button *nzSpaceItem nz-button>Mức 2</button>
+      <button *nzSpaceItem nz-button nzType="primary">Ưu tiên</button>
+    </nz-space>
+  </nz-page-header-extra>
+  <nz-page-header-content>
+    <div class="content">
+      <div class="main">
+        <nz-descriptions nzSize="small" [nzColumn]="2">
+          <nz-descriptions-item class="" nzTitle="Created" [nzSpan]="1">Giang</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="Association" [nzSpan]="1">18-B1 42770</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="Creation Time" [nzSpan]="1">2024/12/11</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="Effective Time" [nzSpan]="1">2024/12/15</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="Remarks" [nzSpan]="2">
+            Ninh Bình, Nam Định, Hà Nội, Hòa Bình, Bắc Ninh
+          </nz-descriptions-item>
+        </nz-descriptions>
+      </div>
+      <div class="extra">
+        <div>
+          <nz-statistic nzTitle="Status" nzValue="Pending"></nz-statistic>
+          <nz-statistic nzTitle="Price" nzValue="421.4214.5" nzPrefix="$" style="margin: 0 32px;"></nz-statistic>
+        </div>
+      </div>
+    </div>
+  </nz-page-header-content>
+  <nz-page-header-footer>
+    <nz-tabset [nzSelectedIndex]="1">
+      <nz-tab nzTitle="Details">
+        <nz-table #groupingTable [nzData]="listOfData" nzBordered nzSize="middle" [nzScroll]="{ x : '1200px', y : '500px'}" >
+          <thead>
+            <tr>
+              <th rowSpan="4" nzLeft [nzFilters]="filterName" [nzFilterFn]="nameFilterFn">Name</th>
+              <th colspan="4">Other</th>
+              <th colspan="2">Company</th>
+              <th rowspan="4" nzRight>Gender</th>
+            </tr>
+            <tr>
+              <th rowspan="3" [nzSortFn]="sortAgeFn">Age</th>
+              <th colspan="3">Address</th>
+              <th rowspan="3">Company Address</th>
+              <th rowspan="3">Company Name</th>
+            </tr>
+            <tr>
+              <th rowspan="2">Street</th>
+              <th colspan="2">Block</th>
+            </tr>
+            <tr>
+              <th>Building</th>
+              <th>Door No.</th>
+            </tr>
+          </thead>
+        </nz-table>
+        </nz-tab>
+        <tbody>
+
+        </tbody>
+      <nz-tab nzTitle="Rule"></nz-tab>
+    </nz-tabset>
+  </nz-page-header-footer>
+
+</nz-page-header>
+<button nz-form class="m-5" routerLink="sc-aside-monitor">Edit Monitor</button>

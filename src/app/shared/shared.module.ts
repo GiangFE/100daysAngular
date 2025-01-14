@@ -73,26 +73,24 @@ import { NzTreeViewModule } from 'ng-zorro-antd/tree-view';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzCodeEditorModule } from 'ng-zorro-antd/code-editor';
 import { NzGraphModule } from 'ng-zorro-antd/graph';
 import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
-import { AppRoutingModule } from '../app-routing.module';
 import { IconsProviderModule } from '../icons-provider.module';
+import { FormlySelectComponent } from './formly-custom/formly-select/formly-select.component';
 
 
 
 @NgModule({
   declarations: [
-    SharedComponent
+    SharedComponent,
+    FormlySelectComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
     IconsProviderModule,
     NzSegmentedModule,
     NzSpaceModule,
@@ -168,10 +166,90 @@ import { IconsProviderModule } from '../icons-provider.module';
     NzPipesModule,
     ReactiveFormsModule,
     FormlyBootstrapModule,
-    FormlyModule.forRoot()
+    FormlyModule.forRoot({
+      validationMessages: [{
+        name: 'required', message: "This field is required"
+      }],
+      types: [],
+      extensions: [],
+      wrappers: []
+    }),
   ],
   exports: [
-    SharedComponent
+    ReactiveFormsModule,
+    SharedComponent,
+    NzSegmentedModule,
+    NzSpaceModule,
+    NzCodeEditorModule,
+    NzGraphModule,
+    NzAffixModule,
+    NzAlertModule,
+    NzAnchorModule,
+    NzAutocompleteModule,
+    NzAvatarModule,
+    NzBackTopModule,
+    NzBadgeModule,
+    NzButtonModule,
+    NzBreadCrumbModule,
+    NzCalendarModule,
+    NzCardModule,
+    NzCarouselModule,
+    NzCascaderModule,
+    NzCheckboxModule,
+    NzCollapseModule,
+    NzCommentModule,
+    NzDatePickerModule,
+    NzDescriptionsModule,
+    NzDividerModule,
+    NzDrawerModule,
+    NzDropDownModule,
+    NzEmptyModule,
+    NzFormModule,
+    NzGridModule,
+    NzI18nModule,
+    NzIconModule,
+    NzImageModule,
+    NzInputModule,
+    NzInputNumberModule,
+    NzLayoutModule,
+    NzListModule,
+    NzMentionModule,
+    NzMenuModule,
+    NzMessageModule,
+    NzModalModule,
+    NzNoAnimationModule,
+    NzNotificationModule,
+    NzPageHeaderModule,
+    NzPaginationModule,
+    NzPopconfirmModule,
+    NzPopoverModule,
+    NzProgressModule,
+    NzRadioModule,
+    NzRateModule,
+    NzResultModule,
+    NzSelectModule,
+    NzSkeletonModule,
+    NzSliderModule,
+    NzSpinModule,
+    NzStatisticModule,
+    NzStepsModule,
+    NzSwitchModule,
+    NzTableModule,
+    NzTabsModule,
+    NzTagModule,
+    NzTimePickerModule,
+    NzTimelineModule,
+    NzToolTipModule,
+    NzTransButtonModule,
+    NzTransferModule,
+    NzTreeModule,
+    NzTreeViewModule,
+    NzTreeSelectModule,
+    NzTypographyModule,
+    NzUploadModule,
+    NzWaveModule,
+    NzResizableModule,
+    NzPipesModule,
   ]
 })
 export class SharedModule { }

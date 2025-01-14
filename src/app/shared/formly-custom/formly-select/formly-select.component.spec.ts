@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MonitorComponent } from './monitor.component';
+import { FormlySelectComponent } from './formly-select.component';
 
-describe('MonitorComponent', () => {
-  let component: MonitorComponent;
-  let fixture: ComponentFixture<MonitorComponent>;
+describe('FormlySelectComponent', () => {
+  let component: FormlySelectComponent;
+  let fixture: ComponentFixture<FormlySelectComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MonitorComponent ]
+      declarations: [ FormlySelectComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MonitorComponent);
+    fixture = TestBed.createComponent(FormlySelectComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

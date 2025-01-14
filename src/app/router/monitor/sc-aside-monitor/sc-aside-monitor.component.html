@@ -1,16 +1,19 @@
-<p>sc-aside-monitor works!</p>
+<div class="row">
+  <div class="col-md-14 mb-14">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <formly-form
+        [form]="form"
+        [model]="model"
+        [fields]="fields">
+      </formly-form>
 
-<form [formGroup]="form" (ngSubmit)="submit()">
-  <formly-form
-    [model]="model"
-    [fields]="fields"
-    [options]="options"
-    [form]="form">
-  </formly-form>
-  <button
-    type="submit"
-    class="btn btn-primary submit-button"
-    [disabled]="!form.valid">Submit
-  </button>
-</form>
+      <button class="btn btn-primary" type="submit">
+        Submit
+      </button>
 
+      <button class="btn btn-danger m-3" type="reset">
+        Reset
+      </button>
+    </form>
+  </div>
+</div>

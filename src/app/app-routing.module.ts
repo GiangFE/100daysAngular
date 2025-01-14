@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './router/login/login.component';
 import { NotFonudComponent } from './router/not-fonud/not-fonud.component';
 import { WelcomeComponent } from './router/welcome/welcome.component';
-import { MonitorComponent } from './router/monitor/monitor.component';
 
 const routes: Routes = [
   {
